@@ -241,7 +241,7 @@ const updateUserAvatar = asyncHandler(async (req,res) =>{
             },
             {
                 new:true
-        });
+        }).select("-password -refreshToken");
 
         return res.status(200)
         .json(
@@ -273,7 +273,7 @@ const updateUserCoverImage = asyncHandler(async (req,res) =>{
             },
             {
                 new:true
-        });
+        }).select("-password -refreshToken");
 
         return res.status(200)
         .json(
